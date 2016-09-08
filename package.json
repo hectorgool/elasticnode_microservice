@@ -17,5 +17,8 @@
     "express"
   ],
   "author": "Santo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
