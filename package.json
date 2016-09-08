@@ -1,0 +1,21 @@
+{
+  "name": "emi",
+  "version": "1.0.0",
+  "description": "ElasticSearch Microservice",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "elasticsearch_microservice"
+  },
+  "keywords": [
+    "microservice",
+    "elasticsearch",
+    "node.js",
+    "express"
+  ],
+  "author": "Santo",
+  "license": "ISC"
+}
