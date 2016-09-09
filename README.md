@@ -39,7 +39,7 @@ docker pull elasticsearch
 ### 6. Run elasticsearch
 
 ```sh
-docker run -d --name elasticsearch elasaticsearch
+docker run -d --name elasticsearch elasticsearch
 ```
 
 ### 7. Test the ElasticSearch Server Container via Linux terminal:
@@ -52,6 +52,22 @@ curl `docker inspect --format '{{ .NetworkSettings.IPAddress }}' elasticsearch`'
 
 ```sh
 node index
+```
+
+# Create a Docker Container
+
+
+### Building your image:
+```sh
+$ docker build -t nodejs_app:v0 .
+```
+
+### Run the image:
+```sh
+docker run -p 8081:3000 -d \
+--link elasticsearch:elasticsearch \
+--name nodejs_app \
+nodejs_app:v0
 ```
 
 ### References:
