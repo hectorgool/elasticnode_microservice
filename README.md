@@ -48,6 +48,12 @@ docker run -d --name elasticsearch elasaticsearch
 curl `docker inspect --format '{{ .NetworkSettings.IPAddress }}' elasticsearch`':9200'
 ```
 
+# Start server:
+
+```sh
+node index
+```
+
 ### References:
 http://expressjs.com/es/starter/installing.html
 http://dillinger.io/
