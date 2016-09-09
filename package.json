@@ -19,6 +19,7 @@
   "author": "Santo",
   "license": "ISC",
   "dependencies": {
+    "elasticsearch": "^11.0.1",
     "express": "^4.14.0"
   }
 }
