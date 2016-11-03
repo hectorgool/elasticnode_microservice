@@ -8,7 +8,7 @@ module.exports = function() {
   var TYPE = 'postal_code';
 
   var client = new elasticsearch.Client({
-    host: 'elasticsearch:9200',
+    host: '172.17.0.2:9200',
     log: 'trace'
   });
   

@@ -70,8 +70,17 @@ docker run -p 8081:3000 -d \
 nodejs_app:v0
 ```
 
+### Curl test:
+```sh
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" 
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" 
+curl -d '{"term":"villa cortes"}' -H "Content-Type: application/json" http://127.0.0.1:3000/
+```
+
 ### References:
-http://expressjs.com/es/starter/installing.html
-http://dillinger.io/
-https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/quick-start.html
-https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-1.html
+* http://expressjs.com/es/starter/installing.html
+* http://dillinger.io/
+* https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/quick-start.html
+* https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-1.html
+* http://expressjs.com/es/api.html
+
