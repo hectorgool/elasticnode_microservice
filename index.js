@@ -23,8 +23,6 @@ app.get('/ping', function(req, res, next) {
 
 // curl -d '{"term":"villa"}' -H "Content-Type: application/json" http://127.0.0.1:3000/search
 app.post('/search', function(req, res, next) {
-  //console.log(req.body.term);
-  //res.json(req.body);
   es.searchDocument(req.body.term, function(data){
     res.status(200).json( { data: data } );
   });
@@ -44,11 +42,9 @@ app.post('/update_document', function(req, res, next) {
 
 /*
 app.get('/search/:id', function(req, res, next) {
-  
   es.searchDocument(req.params.id, function(data){
     res.status(200).json( {data:data} );
   });
-
 });
 */
 

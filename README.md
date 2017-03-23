@@ -71,22 +71,22 @@ node index
 
 ### Building your image:
 ```sh
-$ docker build -t nodejs_app:v0 .
+$ docker build -t node_search_microservice:0 .
 ```
 
 ### Run the image:
 ```sh
-docker run -p 8081:3000 -d \
---link elasticsearch:elasticsearch \
---name nodejs_app \
-nodejs_app:v0
+docker run -p 8088:3000 -d \
+--link elasticsearch \
+--name node_search_microservice \
+--restart=always \
+node_search_microservice:0
 ```
 
 ### Curl test:
 ```sh
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" 
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" 
-curl -d '{"term":"villa cortes"}' -H "Content-Type: application/json" http://127.0.0.1:3000/
+curl -d '{"term":"villa"}' -H "Content-Type: application/json" http://127.0.0.1:3000/search
+curl -d '{"term":"villa"}' -H "Content-Type: application/json" http://localhost:8088/search
 ```
 
 ### vim replace:
@@ -94,12 +94,12 @@ curl -d '{"term":"villa cortes"}' -H "Content-Type: application/json" http://127
 :%s/FindMe/ReplaceME/g
 ```
 
-### vim replace:
+### run service:
 ```sh
 npm start
 ```
 
-### vim replace:
+### test service:
 ```sh
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://`docker inspect --format '{{ .NetworkSettings.IPAddress }}' elasticsearch`:3000/ping
 ```
