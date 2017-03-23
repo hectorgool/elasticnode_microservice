@@ -33,13 +33,13 @@ npm install --save elasticsearch
 ### 5. Install ElasticSearch Server in Docker Container:
 
 ```sh
-docker pull elasticsearch
+docker pull elasticsearch:2.3
 ```
 
 ### 6. Run elasticsearch
 
 ```sh
-docker run -d --name elasticsearch elasticsearch
+docker run -d --name elasticsearch --restart=always elasticsearch:2.3
 ```
 
 ### 7. Test the ElasticSearch Server Container via Linux terminal:
@@ -48,13 +48,25 @@ docker run -d --name elasticsearch elasticsearch
 curl `docker inspect --format '{{ .NetworkSettings.IPAddress }}' elasticsearch`':9200'
 ```
 
+### 8. Load index and mapping:
+
+```sh
+sh elasticsearch_index_mappings.sh
+```
+
+### 9. Load documents:
+
+```sh documents.sh
+sh documents.sh
+```
+
 # Start server:
 
 ```sh
 node index
 ```
 
-# Create a Docker Container
+# Create a Node Docker Container
 
 
 ### Building your image:
@@ -77,10 +89,28 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json"
 curl -d '{"term":"villa cortes"}' -H "Content-Type: application/json" http://127.0.0.1:3000/
 ```
 
+### vim replace:
+```sh
+:%s/FindMe/ReplaceME/g
+```
+
+### vim replace:
+```sh
+npm start
+```
+
+### vim replace:
+```sh
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://`docker inspect --format '{{ .NetworkSettings.IPAddress }}' elasticsearch`:3000/ping
+```
+
+
 ### References:
 * http://expressjs.com/es/starter/installing.html
 * http://dillinger.io/
 * https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/quick-start.html
 * https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-1.html
 * http://expressjs.com/es/api.html
+* https://www.cyberciti.biz/faq/linux-unix-vim-find-replace-text-string-words/
+* https://aws.amazon.com/es/elasticsearch-service/faqs/
 
