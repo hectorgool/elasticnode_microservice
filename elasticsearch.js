@@ -67,7 +67,7 @@ module.exports = function () {
         callback('All is well')
       }, function (err) {
         if (err) {
-          callback('elasticsearch cluster is down!')
+          callback(err.message)
         }
       })
     },
@@ -116,7 +116,7 @@ module.exports = function () {
         id: id
       }, function (err, exists) {
         if (err) {
-          callback('err: ' + err)
+          callback(err.message)
         }
         if (exists === true) {
           callback('exists: ' + exists)
