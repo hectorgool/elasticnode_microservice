@@ -104,6 +104,10 @@ npm start
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://`docker inspect --format '{{ .NetworkSettings.IPAddress }}' elasticsearch`:3000/ping
 ```
 
+### run Standard ( Linter ) :
+```sh
+npm run lint
+```
 
 ### References:
 * http://expressjs.com/es/starter/installing.html
