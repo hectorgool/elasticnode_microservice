@@ -10,9 +10,7 @@ module.exports = function () {
     host: config.elasticsearchserver.host + ':' + config.elasticsearchserver.port,
     log: config.elasticsearchserver.log
   })
-
   return {
-
     createDocument: function (body, callback) {
       client.create({
         index: INDEX,
@@ -35,7 +33,6 @@ module.exports = function () {
         callback(response)
       })
     },
-
     searchDocument: function (term, callback) {
       var params = {
         index: INDEX,
@@ -61,7 +58,6 @@ module.exports = function () {
         callback(err.message)
       })
     },
-
     ping: function (callback) {
       var params = {
         requestTimeout: Infinity, // ping usually has a 3000ms timeout
@@ -75,7 +71,6 @@ module.exports = function () {
         }
       })
     },
-
     deleteDocument: function (id, callback) {
       client.delete({
         index: INDEX,
@@ -88,7 +83,6 @@ module.exports = function () {
         callback(response)
       })
     },
-
     updateDocument: function (body, callback) {
       var doc = {
         cp: body.cp,
@@ -115,7 +109,6 @@ module.exports = function () {
         callback(response)
       })
     },
-
     existsDocument: function (id, callback) {
       client.exists({
         index: INDEX,
