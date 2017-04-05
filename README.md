@@ -56,7 +56,7 @@ sh elasticsearch_index_mappings.sh
 
 ### 9. Load documents:
 
-```sh documents.sh
+```sh
 sh documents.sh
 ```
 
@@ -105,6 +105,10 @@ npm start
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://`docker inspect --format '{{ .NetworkSettings.IPAddress }}' elasticsearch`:3000/ping
 ```
 
+### run Standard ( Linter ) :
+```sh
+npm run lint
+```
 
 ### References:
 * http://expressjs.com/es/starter/installing.html
@@ -114,4 +118,4 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" http:/
 * http://expressjs.com/es/api.html
 * https://www.cyberciti.biz/faq/linux-unix-vim-find-replace-text-string-words/
 * https://aws.amazon.com/es/elasticsearch-service/faqs/
-
+* https://www.npmjs.com/package/standard

@@ -4,7 +4,7 @@
   "description": "ElasticSearch Microservice",
   "main": "index.js",
   "scripts": {
-    "test": "test.js",
+    "lint": "standard",
     "start": "node index.js"
   },
   "repository": {
@@ -23,5 +23,8 @@
     "body-parser": "^1.15.2",
     "elasticsearch": "^11.0.1",
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "standard": "^9.0.2"
   }
 }

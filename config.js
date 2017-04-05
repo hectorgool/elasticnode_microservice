@@ -2,7 +2,7 @@
 
 const config = {
   server: {
-    port: process.env.NODE_PORT,
+    port: process.env.NODE_PORT
   },
   elasticsearchserver: {
     host: process.env.ELASTICSEARCH_HOST,
@@ -13,4 +13,4 @@ const config = {
   }
 }
 
-module.exports = config;
+module.exports = config
