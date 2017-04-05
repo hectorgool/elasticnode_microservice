@@ -86,7 +86,8 @@ node_search_microservice:0
 ### Curl test:
 ```sh
 curl -d '{"term":"villa"}' -H "Content-Type: application/json" http://127.0.0.1:3000/search
-curl -d '{"term":"villa"}' -H "Content-Type: application/json" http://localhost:8088/search
+curl -H "Content-Type: application/json" http://`docker inspect --format '{{ .NetworkSettings.IPAddress }}' node_search_microservice`:8088/ping
+curl -d '{"term":"villa"}' -H "Content-Type: application/json" http://`docker inspect --format '{{ .NetworkSettings.IPAddress }}' node_search_microservice`:8088/search
 ```
 
 ### vim replace:
